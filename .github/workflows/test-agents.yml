@@ -29,14 +29,12 @@ jobs:
           cache-dependency-path: 'evals/framework/package-lock.json'
       
       - name: Install dependencies
-        run: |
-          cd evals/framework
-          npm ci
+        working-directory: evals/framework
+        run: npm ci
       
       - name: Build framework
-        run: |
-          cd evals/framework
-          npm run build
+        working-directory: evals/framework
+        run: npm run build
       
       - name: Run OpenAgent smoke test
         run: npm run test:ci:openagent
@@ -68,14 +66,12 @@ jobs:
           cache-dependency-path: 'evals/framework/package-lock.json'
       
       - name: Install dependencies
-        run: |
-          cd evals/framework
-          npm ci
+        working-directory: evals/framework
+        run: npm ci
       
       - name: Build framework
-        run: |
-          cd evals/framework
-          npm run build
+        working-directory: evals/framework
+        run: npm run build
       
       - name: Run OpenCoder smoke test
         run: npm run test:ci:opencoder
