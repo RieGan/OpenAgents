@@ -20,3 +20,22 @@ export { AutoApproveStrategy } from './approval/auto-approve-strategy.js';
 export { AutoDenyStrategy } from './approval/auto-deny-strategy.js';
 export { SmartApprovalStrategy } from './approval/smart-approval-strategy.js';
 export type { SmartApprovalConfig } from './approval/smart-approval-strategy.js';
+
+// Test execution (modular components)
+export { TestRunner } from './test-runner.js';
+export type { TestRunnerConfig, TestResult } from './test-runner.js';
+
+export { TestExecutor } from './test-executor.js';
+export type { ExecutionConfig, ExecutionResult, ExecutionLogger } from './test-executor.js';
+
+export { ResultValidator } from './result-validator.js';
+export type { ValidationLogger } from './result-validator.js';
+
+export { logEvent, createLogger } from './event-logger.js';
+
+// Test case loading
+export { loadTestCase, loadTestCases } from './test-case-loader.js';
+export type { TestCase, BehaviorExpectation } from './test-case-schema.js';
+
+// Result saving
+export { ResultSaver } from './result-saver.js';
