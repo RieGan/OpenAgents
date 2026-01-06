@@ -1,0 +1,50 @@
+id: btca-context-resource-management
+name: "BTCA Context: Resource Management Test"
+description: |
+  Test BTCA resource management capabilities including checking available resources, adding new repositories, and validation.
+  
+  Validates:
+  - Resource listing functionality
+  - Technology detection accuracy
+  - Resource addition with proper validation
+  - Repository health checking
+  - User confirmation workflows
+category: developer
+
+prompts:
+  - text: |
+      Check what BTCA resources are currently available, then try to add the React repository if it's not already configured. Follow all security protocols and get user confirmation before adding resources.
+
+approvalStrategy:
+  type: auto-approve
+
+behavior:
+  minToolCalls: 2
+  maxToolCalls: 10
+
+expectedViolations:
+  - rule: approval-gate
+    shouldViolate: false
+    severity: error
+  - rule: tool-usage
+    shouldViolate: false
+    severity: error
+
+expectedResults:
+  - type: resource-listing
+    description: "Available BTCA resources listed correctly"
+  - type: technology-detection
+    description: "React technology detected properly"
+  - type: resource-validation
+    description: "Repository URL validated before addition"
+  - type: user-confirmation
+    description: "User confirmation requested before resource addition"
+
+timeout: 180000
+
+tags:
+  - resource-management
+  - subagent
+  - utils-btca-context
+  - functionality
+  - safe

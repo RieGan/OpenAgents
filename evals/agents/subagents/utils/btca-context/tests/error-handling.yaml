@@ -1,0 +1,53 @@
+id: btca-context-error-handling
+name: "BTCA Context: Error Handling Test"
+description: |
+  Test error handling capabilities including BTCA unavailable, network issues, and invalid commands.
+  
+  Validates:
+  - BTCA tool unavailability handling
+  - Network error graceful degradation
+  - Invalid command security enforcement
+  - Fallback strategy implementation
+  - Clear error communication
+category: edge-case
+
+prompts:
+  - text: |
+      Simulate different error scenarios: check what happens when BTCA is not available, try an invalid BTCA command, and test network error handling. Verify graceful fallback strategies are used.
+
+approvalStrategy:
+  type: auto-approve
+
+behavior:
+  minToolCalls: 2
+  maxToolCalls: 10
+
+expectedViolations:
+  - rule: approval-gate
+    shouldViolate: false
+    severity: error
+  - rule: tool-usage
+    shouldViolate: false
+    severity: error
+
+expectedResults:
+  - type: tool-unavailable-handling
+    description: "BTCA unavailability handled gracefully with alternatives"
+  - type: security-enforcement
+    description: "Invalid commands blocked with clear error messages"
+  - type: network-recovery
+    description: "Network errors handled with fallback strategies"
+  - type: graceful-degradation
+    description: "Functionality maintained during error conditions"
+  - type: clear-communication
+    description: "Error messages provide clear resolution steps"
+
+timeout: 180000
+
+tags:
+  - error-handling
+  - subagent
+  - utils-btca-context
+  - security
+  - resilience
+  - safe

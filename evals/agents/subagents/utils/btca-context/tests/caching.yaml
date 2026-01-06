@@ -1,0 +1,52 @@
+id: btca-context-caching
+name: "BTCA Context: Caching Test"
+description: |
+  Test BTCA caching functionality including cache storage, retrieval, TTL, and cleanup.
+  
+  Validates:
+  - Cache key generation with content hashing
+  - Cache storage with proper metadata
+  - Cache retrieval within TTL
+  - Cache expiration and cleanup
+  - Performance improvement with caching
+category: developer
+
+prompts:
+  - text: |
+      Ask a question about React hooks with TypeScript, then ask the same question again to verify cache behavior. Monitor cache hit/miss and verify TTL is working properly.
+
+approvalStrategy:
+  type: auto-approve
+
+behavior:
+  minToolCalls: 2
+  maxToolCalls: 8
+
+expectedViolations:
+  - rule: approval-gate
+    shouldViolate: false
+    severity: error
+  - rule: tool-usage
+    shouldViolate: false
+    severity: error
+
+expectedResults:
+  - type: cache-miss
+    description: "First query results in cache miss"
+  - type: cache-storage
+    description: "Response stored in cache with proper metadata"
+  - type: cache-hit
+    description: "Second query uses cached result"
+  - type: ttl-verification
+    description: "Cache TTL properly enforced"
+  - type: performance-improvement
+    description: "Second response faster than first"
+
+timeout: 180000
+
+tags:
+  - caching
+  - subagent
+  - utils-btca-context
+  - performance
+  - safe
