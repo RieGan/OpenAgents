@@ -1,16 +1,16 @@
 {
   "meta": {
-    "timestamp": "2026-01-06T08:36:27.813Z",
-    "agent": "core/openagent",
+    "timestamp": "2026-01-09T13:10:17.718Z",
+    "agent": "ContextScout",
     "model": "opencode/grok-code-fast",
     "framework_version": "0.1.0",
-    "git_commit": "5334df1"
+    "git_commit": "41c5917"
   },
   "summary": {
     "total": 1,
     "passed": 1,
     "failed": 0,
-    "duration_ms": 21131,
+    "duration_ms": 15339,
     "pass_rate": 1
   },
   "by_category": {
@@ -21,11 +21,11 @@
   },
   "tests": [
     {
-      "id": "smoke-test-001",
+      "id": "core-contextscout-smoke-test",
       "category": "developer",
       "passed": true,
-      "duration_ms": 21131,
-      "events": 34,
+      "duration_ms": 15339,
+      "events": 18,
       "approvals": 0,
       "violations": {
         "total": 0,

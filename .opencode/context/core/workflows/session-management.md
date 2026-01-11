@@ -60,12 +60,12 @@
   "context_files": {
     "features/user-auth-context.md": {
       "created": "2025-01-18T14:30:22Z",
-      "for": "@subagents/core/task-manager",
+      "for": "@TaskManager",
       "keywords": ["user-auth", "authentication", "features"]
     },
     "tasks/user-auth-tasks.md": {
       "created": "2025-01-18T14:32:15Z",
-      "for": "@subagents/core/task-manager",
+      "for": "@TaskManager",
       "keywords": ["user-auth", "tasks", "breakdown"]
     }
   },
